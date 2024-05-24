@@ -1,0 +1,177 @@
+{
+    "layouts": [
+        {
+            "elements": [
+                {},
+                {
+                    "elements": [
+                        {
+                            "elements": [
+                                {
+                                    "elements": [
+                                        {},
+                                        {
+                                            "uuid": "2ae6e63c-7937-4d4b-94cc-c6bed6deba37",
+                                            "type": "text",
+                                            "content": "1",
+                                            "contents": []
+                                        },
+                                        {
+                                            "elements": [
+                                                {},
+                                                {
+                                                    "uuid": "ce65602c-3143-489a-879e-76a257ae4742",
+                                                    "type": "text",
+                                                    "content": "了解学校",
+                                                    "contents": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "uuid": "77639758-a383-4bfe-894a-3512b3696f7a",
+                                    "type": "text",
+                                    "content": "首先，对学校深入了解，包括学校的学术声誉、师资力量、校园设施和地理位置等方面，找到适合自己的学校",
+                                    "contents": [
+                                        {
+                                            "uuid": null,
+                                            "type": null,
+                                            "content": "首先，对学校深入了解，包括"
+                                        },
+                                        {
+                                            "uuid": null,
+                                            "type": null,
+                                            "content": "学术声誉、师资力量"
+                                        },
+                                        {
+                                            "uuid": null,
+                                            "type": null,
+                                            "content": "和"
+                                        },
+                                        {
+                                            "uuid": null,
+                                            "type": null,
+                                            "content": "校园设施"
+                                        },
+                                        {
+                                            "uuid": null,
+                                            "type": null,
+                                            "content": "等方面，找到适合自己的学校"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "elements": [
+                                {
+                                    "elements": [
+                                        {},
+                                        {
+                                            "uuid": "5d022f9e-645a-42b7-9532-4c16a7be04aa",
+                                            "type": "text",
+                                            "content": "2",
+                                            "contents": []
+                                        },
+                                        {
+                                            "elements": [
+                                                {},
+                                                {
+                                                    "uuid": "baddd93e-97a1-4969-9f4c-7759ec2112cf",
+                                                    "type": "text",
+                                                    "content": "了解专业",
+                                                    "contents": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "uuid": "f9024cf2-55b8-4b58-b94b-74e0e46d5bb7",
+                                    "type": "text",
+                                    "content": "选择专业前，需要了解专业的课程设置、教学质量、研究机会和未来就业前景，确保符合自己的兴趣和职业规划",
+                                    "contents": [
+                                        {
+                                            "uuid": null,
+                                            "type": null,
+                                            "content": "选择专业前，需要了解专业的课程设置、教学质量、研究机会和未来就业前景"
+                                        },
+                                        {
+                                            "uuid": null,
+                                            "type": null,
+                                            "content": "，确保符合自己的兴趣和职业规划"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "elements": [
+                                {
+                                    "elements": [
+                                        {},
+                                        {
+                                            "uuid": "beb5ec92-7b06-468b-bcfb-a76688c8a8fd",
+                                            "type": "text",
+                                            "content": "3",
+                                            "contents": []
+                                        },
+                                        {
+                                            "elements": [
+                                                {},
+                                                {
+                                                    "uuid": "1596cff5-b80c-461a-981d-205ced965c89",
+                                                    "type": "text",
+                                                    "content": "准备申请材料",
+                                                    "contents": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "uuid": "af171e78-0313-4056-927c-dfb8f5823787",
+                                    "type": "text",
+                                    "content": "了解申请大学所需的材料和流程，包括推荐信、个人陈述、成绩单和其他必要文件",
+                                    "contents": [
+                                        {
+                                            "uuid": null,
+                                            "type": null,
+                                            "content": "了解申请大学所需的材料和流程"
+                                        },
+                                        {
+                                            "uuid": null,
+                                            "type": null,
+                                            "content": "，包括推荐信、个人陈述、成绩单和其他必要文件"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "uuid": "f60bd6ee-d405-477a-8aee-708404f92a5d",
+                    "type": "text",
+                    "content": "怎么选大学\n基本知识",
+                    "contents": []
+                },
+                {},
+                {
+                    "elements": [
+                        {
+                            "elements": [
+                                {},
+                                {}
+                            ]
+                        },
+                        {}
+                    ]
+                },
+                {},
+                {}
+            ]
+        }
+    ]
+}

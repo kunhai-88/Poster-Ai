@@ -1,5 +1,5 @@
 import json
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageEnhance
 import requests
 from io import BytesIO
 import os
@@ -29,7 +29,7 @@ def hex_to_rgb(hex_color):
     return (r, g, b)
 
 # 读取JSON布局文件
-layout_file = 'layout.json'  # 替换为你的文件路径
+layout_file = 'text_final.json'  # 替换为你的文件路径
 with open(layout_file, 'r') as file:
     layout_data = json.load(file)
 
@@ -49,7 +49,7 @@ image = Image.new('RGBA', (width, height), background_rgba)
 # 将背景图片粘贴到图像上（如果有背景图片）
 if background_image_url:
     response = requests.get(background_image_url)
-    background_img = Image.open(BytesIO(response.content)).convert('RGBA').resize((width, height), Image.LANCZOS)
+    background_img = Image.open(BytesIO(response.content)).resize((width, height), Image.LANCZOS)
     image.paste(background_img, (0, 0))
 
 # 创建绘图对象
@@ -67,10 +67,16 @@ def draw_element(element, parent_position=(0, 0)):
     if elem_type == 'image':
         url = element['url']
         response = requests.get(url)
-        img = Image.open(BytesIO(response.content)).convert('RGBA')
+        img = Image.open(BytesIO(response.content))
         img = img.resize((width, height), Image.LANCZOS)
-        alpha = img.split()[3].point(lambda p: p * opacity)
-        img.putalpha(alpha)
+        if img.mode == 'RGBA':
+            alpha = img.split()[3]
+            alpha = ImageEnhance.Brightness(alpha).enhance(opacity)
+            img.putalpha(alpha)
+        else:
+            img = img.convert('RGBA')
+            alpha = Image.new('L', img.size, int(opacity * 255))
+            img.putalpha(alpha)
         image.paste(img, (left, top), img)
 
     elif elem_type == 'text':
@@ -99,12 +105,22 @@ def draw_element(element, parent_position=(0, 0)):
 
 # 遍历布局文件，绘制所有元素
 for layout in layout_data['layouts']:
-    bg_image_url = layout['background']['image']['url']
-
-    # Download the background image
-    response = requests.get(bg_image_url)
-    bg_image = Image.open(BytesIO(response.content)).convert('RGBA')
-    image.paste(bg_image, (0, 0), bg_image)
+    try:
+        bg_image_url = layout.get('background', {}).get('image', {}).get('url')
+        print(f"bg_image_url: {bg_image_url}")
+        if bg_image_url:  
+        # Download the background image
+          response = requests.get(bg_image_url)
+          bg_image = Image.open(BytesIO(response.content)).convert('RGBA')
+        else:
+          background_rgba = hex_to_rgba(layout['background']['color'])
+          print(f"background_rgba: {background_rgba}")
+          bg_image = Image.new('RGBA', (width, height), background_rgba)
+        image.paste(bg_image, (0, 0), bg_image)
+    except KeyError:
+        print("No background image or color specified.")
+        pass
+    
     for element in layout['elements']:
         draw_element(element)
 
